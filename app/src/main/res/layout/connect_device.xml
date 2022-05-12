@@ -13,7 +13,7 @@
         android:layout_marginTop="16dp"
         android:textSize="25sp"
         android:textStyle="bold"
-        android:text="Connect Dehumidifier "
+        android:text="Connect Dehumidifier"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -31,7 +31,7 @@
         android:layout_marginTop="250dp"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -52,14 +52,13 @@
     <Spinner
         android:id="@+id/spinner_room"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         app:layout_constraintTop_toBottomOf="@id/edit_text_serial"
         android:layout_marginTop="16dp"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:padding="20dp"/>
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/text_view_result_room"
@@ -71,19 +70,19 @@
         android:layout_marginEnd="32dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        />
+        android:hint="Room"
+        android:textSize="20sp"/>
 
     <Button
         android:id="@+id/button_add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="48dp"
         app:layout_constraintTop_toBottomOf="@id/spinner_room"
-        app:layout_constraintStart_toStartOf="@id/edit_text_serial"
-        app:layout_constraintEnd_toEndOf="@id/edit_text_serial"
+        app:layout_constraintStart_toStartOf="@+id/spinner_room"
+        app:layout_constraintEnd_toEndOf="@+id/spinner_room"
         android:text="CONNECT"
-        android:textStyle="bold"
-        />
+        android:textStyle="bold"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
