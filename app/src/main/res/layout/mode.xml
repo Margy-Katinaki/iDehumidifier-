@@ -91,6 +91,16 @@
         app:layout_constraintBottom_toBottomOf="@id/text_view_normal"
         tools:ignore="UseSwitchCompatOrMaterialXml" />
 
-
+    <ImageView
+        android:id="@+id/image_view_back"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/ic_baseline_arrow_back_24"
+        app:layout_constraintTop_toTopOf="@id/text_view_title_mode"
+        app:layout_constraintBottom_toBottomOf="@id/text_view_title_mode"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="4dp"
+        android:clickable="true"
+        android:focusable="true"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
