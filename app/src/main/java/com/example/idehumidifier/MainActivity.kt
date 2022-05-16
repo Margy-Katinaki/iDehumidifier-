@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.button.setOnClickListener {
-            val intent = Intent(this,ModeActivity::class.java)
+            val intent = Intent(this,SpeedActivity::class.java)
             startActivity(intent)
         }
 

@@ -14,8 +14,27 @@ class ModeActivity : AppCompatActivity(){
         setContentView(binding.root)
 
         binding.switchIoniser.setOnCheckedChangeListener{ compoundButton, isChecked->
+            if(isChecked){
             binding.switchClothes.isChecked = !isChecked
-            binding.switchNormal.isChecked = !isChecked
+            binding.switchNormal.isChecked = !isChecked}
+        }
+
+        binding.switchClothes.setOnCheckedChangeListener{ compoundButton, isChecked->
+            if(isChecked){
+                binding.switchIoniser.isChecked = !isChecked
+                binding.switchNormal.isChecked = !isChecked}
+        }
+
+        binding.switchNormal.setOnCheckedChangeListener{ compoundButton, isChecked->
+            if(isChecked){
+                binding.switchIoniser.isChecked = !isChecked
+                binding.switchClothes.isChecked = !isChecked}
+        }
+
+
+        binding.imageViewBack.setOnClickListener {
+            //Toast.makeText(this@ConnectDevice,binding.editTextName.text.toString())
+            onBackPressed()
         }
     }
 }

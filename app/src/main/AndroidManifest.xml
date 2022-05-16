@@ -20,6 +20,8 @@
         </activity>
         <activity android:name=".ConnectDeviceActivity"/>
         <activity android:name=".ModeActivity"/>
+        <activity android:name=".TimerActivity"/>
+        <activity android:name=".SpeedActivity"/>
     </application>
 
 </manifest>
