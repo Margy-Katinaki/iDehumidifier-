@@ -13,16 +13,20 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val list = mutableListOf<Dehumidifier>()
+        val a = Dehumidifier("1", "kati", "kati model", 100.0, 88.0,Mode(),Speed())
+
         binding.button.setOnClickListener {
             val intent = Intent(this,SpeedActivity::class.java)
+            intent.putExtra("deh",a)
             startActivity(intent)
         }
 
 
 
-//        val list = mutableListOf<Dehumidifier>()
 //
-//        val a = Dehumidifier(1, "kati", "kati model", 100.0, 88.0)
+//
+//
 //        val b = Dehumidifier(2, "kati", "kati model", 100.0, 88.0)
 //        val c = Dehumidifier(3, "kati", "kati model", 100.0, 88.0)
 //        val d = Dehumidifier(4, "kati", "kati model", 100.0, 88.0)

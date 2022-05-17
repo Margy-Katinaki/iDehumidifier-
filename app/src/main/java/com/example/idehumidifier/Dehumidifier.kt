@@ -1,5 +1,7 @@
 package com.example.idehumidifier
 
+import java.io.Serializable
+
 data class Dehumidifier(
     var name: String,
     val serial_number: String,
@@ -8,4 +10,4 @@ data class Dehumidifier(
     var temperature: Double?,
     var mode : Mode,
     var speed : Speed
-)
+):Serializable
