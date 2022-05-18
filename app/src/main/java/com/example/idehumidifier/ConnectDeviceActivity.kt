@@ -43,7 +43,11 @@ class ConnectDeviceActivity : AppCompatActivity() {
             }
 
             val deh = Dehumidifier(name,serial,room,null,null,Mode(),Speed())
-            Log.e("hoho",deh.toString())
+            Data.instance.addDehumidifier(deh)
+
+            onBackPressed()
+
+
         }
 
 
