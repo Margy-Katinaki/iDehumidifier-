@@ -39,6 +39,10 @@ class DehumidifierActivity : AppCompatActivity() {
             //Toast.makeText(this@ConnectDevice,binding.editTextName.text.toString())
             onBackPressed()
         }
+
+        binding.imageViewSettings.setOnClickListener{
+            startActivity(Intent(this,SettingsActivity::class.java))
+        }
     }
 
 }

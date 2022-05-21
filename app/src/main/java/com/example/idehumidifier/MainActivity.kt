@@ -8,7 +8,7 @@ import com.example.idehumidifier.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-     private var adapter = DehumidifierAdapter(Data.instance.getDehumidifiers())
+    private var adapter = DehumidifierAdapter(Data.instance.getDehumidifiers())
 
     private lateinit var binding: ActivityMainBinding
 
@@ -17,7 +17,13 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
+        adapter.setOnItemClickListener(object : DehumidifierAdapter.onItemClickListener{
+            override fun onItemClick(dehumidifier: Dehumidifier) {
+                val intent = Intent(baseContext,DehumidifierActivity::class.java)
+                intent.putExtra("deh", dehumidifier)
+                startActivity(intent)
+            }
+        })
 
         binding.recyclerView.adapter = adapter
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
@@ -35,6 +41,9 @@ class MainActivity : AppCompatActivity() {
         }
 
 
+//        adapter.onitemClick ={
+//
+//        }
     }
 
 
