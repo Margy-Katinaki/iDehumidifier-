@@ -11,7 +11,7 @@ class DehumidifierAdapter(
     private val dehumidifiers: MutableList<Dehumidifier>
 ): RecyclerView.Adapter<DehumidifierAdapter.DehumidifierViewHolder>() {
 
-    //var onitemClick: ((Dehumidifier) -> Unit)? = null
+
 
     private lateinit var listener : onItemClickListener
 

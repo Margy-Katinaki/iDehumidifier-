@@ -2,7 +2,7 @@
     <string name="app_name">iDehumidifier</string>
     <string-array name="rooms">
         <item>Room</item>
-        <item>Mater Bedroom</item>
+        <item>Master Bedroom</item>
         <item>Bedroom</item>
         <item>Kitchen</item>
         <item>Living Room</item>

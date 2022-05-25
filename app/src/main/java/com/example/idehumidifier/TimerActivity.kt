@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.DatePicker
 import android.widget.TimePicker
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.idehumidifier.databinding.TimerBinding
 import java.util.*
 
@@ -13,6 +14,8 @@ import java.util.*
 class TimerActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener,TimePickerDialog.OnTimeSetListener {
 
     private lateinit var binding: TimerBinding
+
+    private lateinit var adapter: TimerAdapter
 
     var day = 0
     var month = 0
@@ -31,6 +34,11 @@ class TimerActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener,Ti
         binding = TimerBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        adapter = TimerAdapter(Data.instance.getTimers())
+        adapter.setOnItemClickListener(object : TimerAdapter.onItemClickListener{
+            override fun onItemClick(timer: Timer) {
+            }
+        })
         pickDate()
 
 
@@ -52,7 +60,7 @@ class TimerActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener,Ti
     }
 
     private fun pickDate(){
-        binding.buttonTme.setOnClickListener {
+        binding.buttonTime.setOnClickListener {
             getDateTimeCalendar()
             DatePickerDialog(this,this,year, month, day).show()
         }
@@ -72,6 +80,16 @@ class TimerActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener,Ti
         savedHour = hourofDay
         savedMin = minutes
 
-        binding.textViewTime.text = ("$savedDay-$savedMonth-$savedYear\n $savedHour : $savedMin")
+        val savedtimer = Timer(savedDay,savedMonth,savedYear,savedHour,savedMin)
+        Data.instance.addTimer(savedtimer)
+        adapter = TimerAdapter(Data.instance.getTimers())
+        binding.recyclerView.adapter = adapter
+        binding.recyclerView.layoutManager = LinearLayoutManager(this)
+
+    }
+
+    override fun onResume() {
+        super.onResume()
+        //Data.instance.getTimers()
     }
 }

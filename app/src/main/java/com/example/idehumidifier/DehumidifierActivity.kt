@@ -8,17 +8,19 @@ import com.example.idehumidifier.databinding.DehumidifierBinding
 class DehumidifierActivity : AppCompatActivity() {
 
     private lateinit var binding : DehumidifierBinding
+    lateinit var dehumidifier: Dehumidifier
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding= DehumidifierBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        var dehumid = intent.getSerializableExtra("deh") as Dehumidifier
-        binding.textViewDehumidifierName.text = dehumid.name
-        binding.textViewDehumidifierRoom.text = dehumid.room
+        dehumidifier = Data.instance.getDehumidifier()
 
-        println(dehumid)
+        binding.textViewDehumidifierName.text = dehumidifier.name
+        binding.textViewDehumidifierRoom.text = dehumidifier.room
+
+        println(dehumidifier)
 
         binding.buttonMode.setOnClickListener {
             val intent = Intent(this,ModeActivity::class.java)
@@ -41,8 +43,19 @@ class DehumidifierActivity : AppCompatActivity() {
         }
 
         binding.imageViewSettings.setOnClickListener{
-            startActivity(Intent(this,SettingsActivity::class.java))
+            val intent = Intent(this,SettingsActivity::class.java)
+            startActivity(intent)
         }
+
+
+    }
+
+    override fun onResume() {
+        super.onResume()
+        dehumidifier= Data.instance.getDehumidifier()
+        binding.textViewDehumidifierName.text = dehumidifier.name
+        binding.textViewDehumidifierRoom.text = dehumidifier.room
+
     }
 
 }

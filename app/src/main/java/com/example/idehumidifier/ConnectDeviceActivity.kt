@@ -47,25 +47,13 @@ class ConnectDeviceActivity : AppCompatActivity() {
 
             onBackPressed()
 
-
         }
-
 
         binding.imageViewBack.setOnClickListener {
             //Toast.makeText(this@ConnectDevice,binding.editTextName.text.toString())
             onBackPressed()
         }
 
-
-
-
-
-
     }
-
-
-
-
-
 
 }

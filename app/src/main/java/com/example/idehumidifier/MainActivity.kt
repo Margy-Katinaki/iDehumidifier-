@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         adapter.setOnItemClickListener(object : DehumidifierAdapter.onItemClickListener{
             override fun onItemClick(dehumidifier: Dehumidifier) {
                 val intent = Intent(baseContext,DehumidifierActivity::class.java)
-                intent.putExtra("deh", dehumidifier)
+                Data.instance.setDehumidifier(dehumidifier)
                 startActivity(intent)
             }
         })
@@ -36,14 +36,17 @@ class MainActivity : AppCompatActivity() {
 
 
         binding.button.setOnClickListener {
+/*          UNCOMMENT THIS LATER
             val intent = Intent(this,ConnectDeviceActivity::class.java)
             startActivity(intent)
+*/
+
+            val deh = Dehumidifier("name","serial","room",null,null,Mode(),Speed())
+            Data.instance.addDehumidifier(deh)
+            onResume()
         }
 
 
-//        adapter.onitemClick ={
-//
-//        }
     }
 
 
