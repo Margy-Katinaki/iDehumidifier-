@@ -8,14 +8,14 @@ import com.example.idehumidifier.databinding.DehumidifierBinding
 class DehumidifierActivity : AppCompatActivity() {
 
     private lateinit var binding : DehumidifierBinding
-    lateinit var dehumidifier: Dehumidifier
+     var dehumidifier = Data.instance.getDehumidifier()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding= DehumidifierBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        dehumidifier = Data.instance.getDehumidifier()
+
 
         binding.textViewDehumidifierName.text = dehumidifier.name
         binding.textViewDehumidifierRoom.text = dehumidifier.room

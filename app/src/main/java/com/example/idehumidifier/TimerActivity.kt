@@ -3,6 +3,7 @@ package com.example.idehumidifier
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
 import android.os.Bundle
+import android.util.Log
 import android.widget.DatePicker
 import android.widget.TimePicker
 import androidx.appcompat.app.AppCompatActivity
@@ -15,7 +16,7 @@ class TimerActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener,Ti
 
     private lateinit var binding: TimerBinding
 
-    private lateinit var adapter: TimerAdapter
+    private  var adapter  = TimerAdapter(Data.instance.getTimers())
 
     var day = 0
     var month = 0
@@ -34,11 +35,14 @@ class TimerActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener,Ti
         binding = TimerBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        adapter = TimerAdapter(Data.instance.getTimers())
-        adapter.setOnItemClickListener(object : TimerAdapter.onItemClickListener{
-            override fun onItemClick(timer: Timer) {
-            }
-        })
+        binding.recyclerView.adapter = adapter
+        binding.recyclerView.layoutManager = LinearLayoutManager(this)
+
+//        adapter.setOnItemClickListener(object : TimerAdapter.onItemClickListener{
+//            override fun onItemClick(timer: Timer) {
+//                Log.e("eee","a")
+//            }
+//        })
         pickDate()
 
 
@@ -88,8 +92,4 @@ class TimerActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener,Ti
 
     }
 
-    override fun onResume() {
-        super.onResume()
-        //Data.instance.getTimers()
-    }
 }

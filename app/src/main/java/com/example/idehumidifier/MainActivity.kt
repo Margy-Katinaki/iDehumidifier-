@@ -36,13 +36,13 @@ class MainActivity : AppCompatActivity() {
 
 
         binding.button.setOnClickListener {
-/*          UNCOMMENT THIS LATER
+         //UNCOMMENT THIS LATER
             val intent = Intent(this,ConnectDeviceActivity::class.java)
             startActivity(intent)
-*/
 
-            val deh = Dehumidifier("name","serial","room",null,null,Mode(),Speed())
-            Data.instance.addDehumidifier(deh)
+
+//            val deh = Dehumidifier("name","serial","room",null,null,Mode(),Speed())
+//            Data.instance.addDehumidifier(deh)
             onResume()
         }
 
