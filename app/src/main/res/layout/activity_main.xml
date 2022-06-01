@@ -6,6 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/home_background"
+        android:scaleType="matrix"
+        android:foreground="@drawable/gradient"
+        />
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
@@ -26,7 +34,11 @@
         app:layout_constraintBottom_toTopOf="@id/recycler_view"
         android:layout_marginBottom="16dp"
         app:layout_constraintStart_toStartOf="@id/recycler_view"
+        app:layout_constraintEnd_toEndOf="parent"
         android:text="Availiable Dehumidifiers"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:textColor="@color/white"
         android:layout_marginStart="4dp"
         android:layout_marginTop="24dp"/>
 
@@ -40,7 +52,8 @@
         android:textSize="20sp"
         android:textStyle="bold"
         android:layout_marginEnd="4dp"
-        android:layout_marginStart="4dp"/>
+        android:layout_marginStart="4dp"
+        android:backgroundTint="#0620A8"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
