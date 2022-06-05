@@ -21,7 +21,7 @@
         </activity>
         <activity android:name=".ConnectDeviceActivity"/>
         <activity android:name=".ModeActivity"/>
-        <activity android:name=".TimerActivity"/>
+        <activity android:name=".SchedulerActivity"/>
         <activity android:name=".SpeedActivity"/>
         <activity android:name=".DehumidifierActivity"/>
         <activity android:name=".SettingsActivity"/>

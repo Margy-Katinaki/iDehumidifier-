@@ -23,7 +23,7 @@ class TimerAdapter(
 //        this.listener = listener
 //    }
 
-    class TimerViewHolder(itemView : View, ): RecyclerView.ViewHolder(itemView.rootView){
+    class TimerViewHolder(itemView : View ): RecyclerView.ViewHolder(itemView.rootView){
         val textView_Date : TextView = itemView.findViewById(R.id.text_view_date)
         val textView_Time : TextView = itemView.findViewById(R.id.text_view_time)
         val cardView_time : CardView = itemView.findViewById(R.id.card_view_timer)

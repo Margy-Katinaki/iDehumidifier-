@@ -5,6 +5,7 @@ import android.app.Application
 class Data : Application() {
     private lateinit var dehumidifiersList : MutableList<Dehumidifier>
     private lateinit var timersList : MutableList<Timer>
+    private lateinit var schedulersList : MutableList<Scheduler>
     private lateinit var curDehumidifier: Dehumidifier
 
     companion object {
@@ -17,6 +18,7 @@ class Data : Application() {
         instance = this
         dehumidifiersList = mutableListOf()
         timersList= mutableListOf()
+        schedulersList= mutableListOf()
     }
     fun setDehumidifier(dehumidifier: Dehumidifier){
         this.curDehumidifier = dehumidifier
@@ -43,13 +45,17 @@ class Data : Application() {
         if(curDehumidifier.room != newRoom) curDehumidifier.room = newRoom
     }
 
-    fun addTimer(timer: Timer){
-        timersList.add(timer)
-        println(timersList.size)
+    fun addScheduler(scheduler: Scheduler){
+        schedulersList.add(scheduler)
+        println(schedulersList.size)
     }
 
-    fun getTimers(): MutableList<Timer>{
-        return timersList
+    fun getSchedulers(): MutableList<Scheduler>{
+        return schedulersList
+    }
+
+    fun saveState(state: Boolean, pos: Int){
+        schedulersList[pos].isOn = state
     }
 
     fun changeMode(curMode: Mode){

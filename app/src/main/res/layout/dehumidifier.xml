@@ -77,7 +77,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@id/button_speed"
         android:text="MODE"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        android:backgroundTint="#0620A8"/>
 
     <Button
         android:id="@+id/button_speed"
@@ -87,7 +88,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/button_timer"
         android:text="SPEED"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        android:backgroundTint="#0620A8"/>
 
     <Button
         android:id="@+id/button_timer"
@@ -97,7 +99,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:text="TIMER"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        android:backgroundTint="#0620A8"/>
 
 
 

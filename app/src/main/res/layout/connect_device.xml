@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/radialgradientback">
 
 
     <TextView
@@ -70,7 +71,8 @@
         app:layout_constraintStart_toStartOf="@+id/spinner_room"
         app:layout_constraintEnd_toEndOf="@+id/spinner_room"
         android:text="CONNECT"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        android:backgroundTint="#0620A8"/>
 
 
     <ImageView

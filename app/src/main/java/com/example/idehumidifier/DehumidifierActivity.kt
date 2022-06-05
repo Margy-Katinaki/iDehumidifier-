@@ -33,7 +33,7 @@ class DehumidifierActivity : AppCompatActivity() {
         }
 
         binding.buttonTimer.setOnClickListener {
-            val intent = Intent(this,TimerActivity::class.java)
+            val intent = Intent(this,SchedulerActivity::class.java)
             startActivity(intent)
         }
 
