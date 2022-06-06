@@ -15,7 +15,8 @@
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginStart="4dp"
         android:clickable="true"
-        android:focusable="true"/>
+        android:focusable="true"
+        app:tint="#000000"/>
 
     <TextView
         android:id="@+id/text_view_dehumidifier"
@@ -40,6 +41,7 @@
         app:layout_constraintTop_toTopOf="@id/text_view_dehumidifier"
         app:layout_constraintBottom_toBottomOf="@id/text_view_dehumidifier"
         android:src="@drawable/ic_baseline_settings_24"
+        app:tint="#000000"
         android:layout_marginEnd="4dp"
         android:clickable="true"
         android:focusable="true" />
@@ -67,6 +69,56 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
+    <ImageView
+        android:id="@+id/image_view_temp"
+        android:layout_width="54dp"
+        android:layout_height="54dp"
+        android:src="@drawable/thermostat"
+        app:layout_constraintTop_toBottomOf="@id/text_view_dehumidifier_room"
+        app:layout_constraintBottom_toTopOf="@id/button_mode"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/text_view_temperature"
+        android:layout_marginStart="4dp"
+        app:tint="#000000"
+       app:layout_constraintHorizontal_chainStyle="packed"/>
+
+    <TextView
+        android:id="@+id/text_view_temperature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/image_view_temp"
+        app:layout_constraintBottom_toBottomOf="@id/image_view_temp"
+        app:layout_constraintStart_toEndOf="@id/image_view_temp"
+        app:layout_constraintEnd_toStartOf="@id/image_view_hum"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="40dp"
+        android:textSize="20dp"
+        />
+
+    <ImageView
+        android:id="@+id/image_view_hum"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:src="@drawable/ic_humidity"
+        android:backgroundTint="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/text_view_dehumidifier_room"
+        app:layout_constraintBottom_toTopOf="@id/button_timer"
+        app:layout_constraintStart_toEndOf="@id/text_view_temperature"
+        app:layout_constraintEnd_toStartOf="@id/text_view_hum"
+        android:layout_marginStart="40dp"/>
+
+    <TextView
+        android:id="@+id/text_view_hum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/image_view_hum"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/image_view_hum"
+        app:layout_constraintBottom_toBottomOf="@id/image_view_hum"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
+        android:text="20%"
+        android:textSize="20dp"/>
 
 
     <Button

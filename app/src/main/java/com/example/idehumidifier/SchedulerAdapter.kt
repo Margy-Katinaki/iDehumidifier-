@@ -44,13 +44,14 @@ class SchedulerAdapter (
         val hour = curSched.hour.toString()
         val min = curSched.min.toString()
 
+
         holder.apply {
             textView_Sch_Date.text = "$day/$month/$year"
             textView_Sch_Time.text = "$hour:$min"
+            switch_Scheduler.isChecked = curSched.isOn
         }
 
         holder.switch_Scheduler.setOnCheckedChangeListener { compoundButton, isChecked ->
-            println()
             if(isChecked){
                 Data.instance.saveState(true, position)
             } else {

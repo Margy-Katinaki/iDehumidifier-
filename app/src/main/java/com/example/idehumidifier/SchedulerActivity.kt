@@ -89,5 +89,12 @@ class SchedulerActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListene
 
     }
 
+    override fun onResume() {
+        super.onResume()
+        adapter = SchedulerAdapter(Data.instance.getSchedulers())
+        binding.recyclerView.adapter = adapter
+        binding.recyclerView.layoutManager = LinearLayoutManager(this)
+    }
+
 }
 

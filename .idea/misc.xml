@@ -4,6 +4,11 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Margy/AndroidStudioProjects/iDehumidifier/app/src/main/res/drawable/gradient.xml" value="0.129" />
+        <entry key="..\:/Users/Margy/AndroidStudioProjects/iDehumidifier/app/src/main/res/drawable/ic_baseline_delete_24.xml" value="0.1" />
+        <entry key="..\:/Users/Margy/AndroidStudioProjects/iDehumidifier/app/src/main/res/drawable/ic_humidity.xml" value="0.1105" />
+        <entry key="..\:/Users/Margy/AndroidStudioProjects/iDehumidifier/app/src/main/res/drawable/thermostat-48px (1).xml" value="0.1105" />
+        <entry key="..\:/Users/Margy/AndroidStudioProjects/iDehumidifier/app/src/main/res/drawable/thermostat-48px.xml" value="0.1105" />
+        <entry key="..\:/Users/Margy/AndroidStudioProjects/iDehumidifier/app/src/main/res/drawable/thermostat.xml" value="0.13" />
         <entry key="..\:/Users/Margy/AndroidStudioProjects/iDehumidifier/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/Margy/AndroidStudioProjects/iDehumidifier/app/src/main/res/layout/add_device.xml" value="0.22" />
         <entry key="..\:/Users/Margy/AndroidStudioProjects/iDehumidifier/app/src/main/res/layout/connect_device.xml" value="0.22" />

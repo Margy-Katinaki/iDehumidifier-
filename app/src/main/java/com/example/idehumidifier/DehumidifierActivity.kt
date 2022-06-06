@@ -19,7 +19,8 @@ class DehumidifierActivity : AppCompatActivity() {
 
         binding.textViewDehumidifierName.text = dehumidifier.name
         binding.textViewDehumidifierRoom.text = dehumidifier.room
-
+        binding.textViewTemperature.text = Data.instance.getTodayWeather().temperature + "\u00B0 C"
+        binding.textViewHum.text = Data.instance.getTodayWeather().humidity +"%"
         println(dehumidifier)
 
         binding.buttonMode.setOnClickListener {

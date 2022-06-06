@@ -15,7 +15,8 @@
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginStart="4dp"
         android:clickable="true"
-        android:focusable="true"/>
+        android:focusable="true"
+        app:tint="#000000"/>
 
     <TextView
         android:id="@+id/text_view_title_settings"
@@ -79,7 +80,8 @@
         app:layout_constraintStart_toEndOf="@id/button_save"
         app:layout_constraintEnd_toEndOf="parent"
         android:clickable="true"
-        android:focusable="true"/>
+        android:focusable="true"
+        app:tint="#000000"/>
 
 
 

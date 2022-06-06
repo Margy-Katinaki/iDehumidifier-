@@ -27,7 +27,7 @@ class DehumidifierAdapter(
         val textView_Name : TextView = itemView.findViewById(R.id.text_view_name)
         val textView_Room :TextView = itemView.findViewById(R.id.text_view_room)
         val imageView : ImageView = itemView.findViewById(R.id.image_view)
-    }
+      }
 
     override fun onCreateViewHolder(
         parent: ViewGroup,

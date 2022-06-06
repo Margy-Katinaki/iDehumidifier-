@@ -1,10 +1,12 @@
 package com.example.idehumidifier
 
 import android.app.Application
+import java.util.*
 
 class Data : Application() {
     private lateinit var dehumidifiersList : MutableList<Dehumidifier>
     private lateinit var timersList : MutableList<Timer>
+    private lateinit var weatherList : MutableList<Weather>
     private lateinit var schedulersList : MutableList<Scheduler>
     private lateinit var curDehumidifier: Dehumidifier
 
@@ -18,6 +20,17 @@ class Data : Application() {
         instance = this
         dehumidifiersList = mutableListOf()
         timersList= mutableListOf()
+//+ (char) 0x00B0+"C"
+        weatherList= mutableListOf(
+            Weather("25","40"),
+            Weather("27","32"),
+            Weather("25","40"),
+            Weather("24","50"),
+            Weather("20","60"),
+            Weather("22","48"),
+            Weather("21","43"),
+        )
+
         schedulersList= mutableListOf()
     }
     fun setDehumidifier(dehumidifier: Dehumidifier){
@@ -64,5 +77,10 @@ class Data : Application() {
 
     fun changeSpeed(curSpeed: Speed){
         curDehumidifier.speed = curSpeed
+    }
+
+    fun getTodayWeather(): Weather{
+        val day = Calendar.getInstance().get(Calendar.DAY_OF_WEEK)
+        return weatherList[day]
     }
 }
