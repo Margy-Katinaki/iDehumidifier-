@@ -81,6 +81,6 @@ class Data : Application() {
 
     fun getTodayWeather(): Weather{
         val day = Calendar.getInstance().get(Calendar.DAY_OF_WEEK)
-        return weatherList[day]
+        return weatherList[day-1]
     }
 }
